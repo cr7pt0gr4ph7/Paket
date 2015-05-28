@@ -157,6 +157,23 @@ type Dependencies(dependenciesFileName: string) =
             this.RootPath,
             fun () -> UpdateProcess.SmartInstall(dependenciesFileName, None, options))
 
+    /// Installs all dependencies.
+    member this.Install(setParams: SmartInstallOptions -> SmartInstallOptions) =
+        let options = setParams(SmartInstallOptions.Default)
+        this.Install(options)
+
+    /// Installs all dependencies.
+    member this.InstallWithOptions: SmartInstallOptionsBuilder<unit> =
+        SmartInstallOptionsBuilder(this.Install)
+
+    /// Installs all dependencies.
+    member this.InstallFluent(builder: SmartInstallOptionsFluentBuilder) =
+        this.Install(builder.GetResult())
+
+    /// Installs all dependencies.
+    member this.InstallFluent(setParams: SmartInstallOptionsFluentBuilder -> SmartInstallOptionsFluentBuilder) =
+        this.Install(setParams(SmartInstallOptionsFluentBuilder()).GetResult())
+
     /// Creates a paket.dependencies file with the given text in the current directory and installs it.
     static member Install(dependencies, ?path: string, ?force, ?hard, ?withBindingRedirects) =
         let path = defaultArg path Environment.CurrentDirectory

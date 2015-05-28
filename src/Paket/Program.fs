@@ -130,7 +130,59 @@ let install (results : ArgParseResults<_>) =
     let hard = results.Contains <@ InstallArgs.Hard @>
     let withBindingRedirects = results.Contains <@ InstallArgs.Redirects @>
     let installOnlyReferenced = results.Contains <@ InstallArgs.Install_Only_Referenced @>
-    Dependencies.Locate().Install(force, hard, withBindingRedirects, installOnlyReferenced)
+    Dependencies.Locate().Install (fun p -> {
+        p with
+        Common = {
+            p.Common with
+            Force = force
+            Hard = hard
+            Redirects = withBindingRedirects
+        }
+        OnlyReferenced = results.Contains <@ InstallArgs.Install_Only_Referenced @>
+    })
+
+    Dependencies.Locate().Install (fun p -> {
+        p with
+        Common = {
+            p.Common with
+            Force = force
+            Hard = hard
+            Redirects = withBindingRedirects
+        }
+        OnlyReferenced = results.Contains <@ InstallArgs.Install_Only_Referenced @>
+    })
+
+    Dependencies.Locate().InstallWithOptions { Force true; Hard false }
+
+    Dependencies.Locate().InstallWithOptions {
+        Force force
+        Hard hard
+        OnlyReferenced (results.Contains <@ InstallArgs.Install_Only_Referenced @>)
+    }
+
+    Dependencies.Locate().InstallFluent(
+        SmartInstallOptionsFluentBuilder()
+            .Force(force)
+            .Hard(hard)
+            .OnlyReferenced(results.Contains <@ InstallArgs.Install_Only_Referenced @>))
+
+    Dependencies.Locate().InstallFluent (fun p ->
+        p.Force(force)
+         .Hard(hard)
+         .OnlyReferenced(results.Contains <@ InstallArgs.Install_Only_Referenced @>)
+    )
+
+    // Dependencies.Locate().CreateInstallBuilder()
+    //     .Force(force)
+    //     .Hard(hard)
+    //     .OnlyReferenced(results.Contains <@ InstallArgs.Install_Only_Referenced @>)
+    //     .Execute()
+
+    Dependencies.Locate().Install()
+        .Force(force)
+        .Hard(hard)
+        .OnlyReferenced(results.Contains <@ InstallArgs.Install_Only_Referenced @>)
+        .Execute()
 
 let outdated (results : ArgParseResults<_>) =
     let strict = results.Contains <@ OutdatedArgs.Ignore_Constraints @> |> not

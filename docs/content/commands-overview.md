@@ -12,10 +12,39 @@ To get help on a specific command:
 ## Available commands
 
 <style type="text/css">
-.command-list > li { line-height: 25px; }
+ul.command-list {
+  margin-top: 0px !important;
+}
+.command-list > li {
+  line-height: 25px;
+}
+.command-list > li > a {
+  margin-left: 4px !important;
+}
+.command-list-container {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.command-list-container h3 {
+  margin-left: 25px !important;
+  position: relative;
+}
+.command-list-container h3 > a {
+  position: relative;
+}
+.command-list-container h3 .glyphicon {
+  position: absolute;
+  left: -25px;
+  top: 5px;
+}
+.command-list-container h3 .glyphicon {
+  line-height: 14px;
+  font-size: 14px;
+  color: #333;
+}
 </style>
 
-<div class="container">
+<div class="container command-list-container">
 <div class="row">
 <div class="span4">
 
@@ -32,9 +61,8 @@ To get help on a specific command:
 <ul class="nav nav-list command-list">
 <li><a href="paket-add.html">paket add</a></li>
 <li><a href="paket-remove.html">paket remove</a></li>
-<li></li>
-<li><a href="paket-simplify.html">paket simplify</a></li>
 <li><a href="paket-update.html">paket update</a></li>
+<li><a href="paket-simplify.html">paket simplify</a></li>
 </ul>
 
 <h3><a name="Searching-Packages" class="anchor" href="#Searching-Packages"><span class="glyphicon glyphicon-search"></span> Searching Packages</a></h3>

@@ -11,40 +11,71 @@ To get help on a specific command:
 
 ## Available commands
 
-### Setup and Config
+<style type="text/css">
+.command-list > li { line-height: 25px; }
+</style>
 
-  * [paket init](paket-init.html)
-  * [paket config](paket-config.html)
-  * [paket convert-from-nuget](paket-convert-from-nuget.html)
+<div class="container">
+<div class="row">
+<div class="span4">
 
-### Package Management
+<h3><a name="Setup-and-Config" class="anchor" href="#Setup-and-Config"><span class="glyphicon glyphicon-cog"></span> Setup and Config</a></h3>
 
-  * [paket add](paket-add.html)
-  * [paket remove](paket-remove.html)
-  * [paket simplify](paket-simplify.html)
+<ul class="nav nav-list command-list">
+<li><a href="paket-init.html">paket init</a></li>
+<li><a href="paket-config.html">paket config</a></li>
+<li><a href="paket-convert-from-nuget.html">paket convert-from-nuget</a></li>
+</ul>
 
-### Searching Packages
+<h3><a name="Package-Management" class="anchor" href="#Package-Management"><span class="glyphicon glyphicon-circle-arrow-down"></span> Package Management</a></h3>
 
-  * [paket find-packages](paket-find-packages.html)
-  * [paket find-package-versions](paket-find-package-versions)
+<ul class="nav nav-list command-list">
+<li><a href="paket-add.html">paket add</a></li>
+<li><a href="paket-remove.html">paket remove</a></li>
+<li></li>
+<li><a href="paket-simplify.html">paket simplify</a></li>
+<li><a href="paket-update.html">paket update</a></li>
+</ul>
 
-### Sharing Packages
+<h3><a name="Searching-Packages" class="anchor" href="#Searching-Packages"><span class="glyphicon glyphicon-search"></span> Searching Packages</a></h3>
 
-  * [paket pack](paket-pack.html)
-  * [paket push](paket-push.html)
+<ul class="nav nav-list command-list">
+<li><a href="paket-find-packages.html">paket find-packages</a></li>
+<li><a href="paket-find-package-versions">paket find-package-versions</a></li>
+</ul>
 
-### Package Maintenance
+</div>
+<div class="span5">
 
-  * [paket outdated](paket-outdated.html)
-  * [paket find-refs](paket-find-refs.html)
-  * [paket show-installed-packages](paket-show-installed-packages.html)
+<h3><a name="Sharing-Packages" class="anchor" href="#Sharing-Packages"><span class="glyphicon glyphicon-circle-arrow-up"></span> Sharing Packages</a></h3>
 
-### Installing Packages
+<ul class="nav nav-list command-list">
+<li><a href="paket-pack.html">paket pack</a></li>
+<li><a href="paket-push.html">paket push</a></li>
+</ul>
 
-  * [paket install](paket-install.html)
-  * [paket update](paket-update.html)
+<h3><a name="Package-Maintenance" class="anchor" href="#Package-Maintenance"><span class="glyphicon glyphicon-wrench"></span> Package Maintenance</a></h3>
 
-### Restoring Packages
+<ul class="nav nav-list command-list">
+<li><a href="paket-outdated.html">paket outdated</a></li>
+<li><a href="paket-find-refs.html">paket find-refs</a></li>
+<li><a href="paket-show-installed-packages.html">paket show-installed-packages</a></li>
+</ul>
 
-  * [paket auto-restore](paket-auto-restore.html)
-  * [paket restore](paket-restore.html)
+<h3><a name="Installing-Packages" class="anchor" href="#Installing-Packages"><span class="glyphicon glyphicon-certificate"></span> Installing Packages</a></h3>
+
+<ul class="nav nav-list command-list">
+<li><a href="paket-install.html">paket install</a></li>
+<li><a href="paket-update.html">paket update</a></li>
+</ul>
+
+<h3><a name="Restoring-Packages" class="anchor" href="#Restoring-Packages"><span class="glyphicon glyphicon-refresh"></span> Restoring Packages</a></h3>
+
+<ul class="nav nav-list command-list">
+<li><a href="paket-auto-restore.html">paket auto-restore</a></li>
+<li><a href="paket-restore.html">paket restore</a></li>
+</ul>
+
+</div>
+</div>
+</div>
